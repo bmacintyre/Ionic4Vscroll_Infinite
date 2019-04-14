@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic 4 VScroll Infinite Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-virtual-scroll [items]="dataList">
+    <ion-card class="cardListItem" *virtualItem="let item; let i = index">
+      <div class="logoContainer">
+        <ion-img class="logo" (ionImgDidLoad)="imageLoaded(i)" [ngStyle]="{'opacity': (!!item.loaded && item.loaded === true) ? '1' : '0'}" src="{{item.picture}}"></ion-img>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-label class="sectionText"><h2><b>{{ item.name.first + ' ' + item.name.last }}</b></h2></ion-label>
+        </ion-row>
+        <ion-row >
+            <h5 class="address">{{item.address}}</h5>
+          </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-virtual-scroll>
+  <ion-infinite-scroll style="margin-top: 10px" threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,45 @@
+ion-card {
+    background-color: rgb(228, 227, 227);
+}
+
+ion-card.card-list {
+    position: relative;
+    margin-bottom: 0px !important;
+    width: 100%;
+    margin: 0;
+
+    .card-image {
+        width: 100% !important;
+        height: 40vw;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
+
+.logo {
+    height: 106px !important;
+    width: auto;
+    margin-top: -8px;
+}
+
+.logoContainer{
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+
+.sectionText {
+    margin-top: 0px;
+    margin-left: 9px;
+    overflow: visible;
+    background: transparent; 
+}
+
+.address {
+    background: transparent; 
+    margin-left: 9px;
+    margin-top: 10px;
+    font-size: 1em;
+}
